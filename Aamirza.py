@@ -2,11 +2,13 @@ from itertools import permutations
 from hazm import Normalizer, word_tokenize
 import pandas as pd
 
-dictionary = pd.read_fwf("C:/Users/Morteza Kheiri/Downloads/Moin_Key_Words.txt")
+# first Download Moin_Key_Words.txt
+address = "the downloaded txt file address on your system"
+
+dictionary = pd.read_fwf(address)
 
 def is_meaningful(word):
     # Implement a function to check if a word is meaningful in Persian
-    # You can use a pre-built dictionary or an API to check for meaningful words
     if(list(dictionary['اب']).count(word) > 0):
         return True
     else :
