@@ -32,10 +32,15 @@ def get_meaningful_permutations(input_string):
 input_string = input("Letters = ")
 wordLength = int(input("Length = "))
 
-while wordLength > 0 :
+if(input_string == "" || input_string == "0"):
+    break
+elif wordLength > 0 :
     result = get_meaningful_permutations(input_string)
 
     for r in result :
         if(len(r) == wordLength):
             print(r)
+    wordLength = int(input("Length = "))
+else :
+    input_string = input("Letters = ")
     wordLength = int(input("Length = "))
